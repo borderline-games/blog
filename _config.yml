@@ -3,3 +3,4 @@ title: Borderline Blog
 google_analytics: UA-139612603-2
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
