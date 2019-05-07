@@ -12,14 +12,14 @@ author: Constantin Liétard
 
 * * *
 
-### Intro
+## Intro
 Over the years, you most likely encountered many forms of **screenshakes**, whether they were a way to *increase the impact* of the player's actions or those of *the enemies*
 This tutorial will focus on the later since this series is all about **getting your ass kicked**.
 
 This tutorial was heavily based on [this GDC talk](https://www.youtube.com/watch?v=tu-Qe66AvtY) with improvements here and there.
 The implementation is done in **Unity** but can easily be ported to any other engine.
 
-### Screenshake, the usual way
+## Screenshake, the usual way
 
 ![](../../images/trauma-screenshake/indiedev.gif)
 > Lunch at Vlambeer (Artist impression)
@@ -33,9 +33,9 @@ Some do add a certain *continuity* and *smoothness* in the movement by **interpo
 
 *Note : We will be focusing on "random" screenshakes for now, and will discuss directional screenshakes later on.*
 
-### Screenshake, the better way
+## Screenshake, the better way
 
-#### Traumatising
+### Traumatising
 
 This idea behind **trauma based** screenshake is fairly simple: 
 A *variable* is used to describe the *current* trauma of the player, this variable is normalized from 0 to 1.
@@ -69,7 +69,7 @@ void LateUpdate()
 
 ⠀
 
-#### Of linearity
+### Of linearity
 Linearity doesn't feel natural for a lot of things, sounds does not *scale linearly*, being good at making games does not scale linearly, the way things *hurt* does not either.
 As you can probably guess, same goes for screenshakes!
 In his GDC talk, *Squirrel Eiserloh* uses a **power** function for this purpose, it works great but is quite difficult to use when you want to do fine-tuning.
@@ -99,7 +99,7 @@ void LateUpdate()
 
 ⠀
 
-#### Axis of liberty
+### Axis of liberty
 For a long time, games have been *two-dimensional* since then games have evolved, many screenshakes did not.
 Cameras are now able to **rotate** and we will take advantage of that (even in 2d games)!
 
@@ -146,7 +146,7 @@ void LateUpdate()
 
 ⠀
 
-#### Space-Time continuity
+### Space-Time continuity
 For now, we only used a **random** function in order to get our *translation* or *rotation* value. This works but has two major flaws:
 * No *continuity* of the transformation
 * Lack of time *scaling*
@@ -188,10 +188,10 @@ void LateUpdate()
 
 ⠀
 
-### Going further
+## Going further
 
 Until now the **trauma reduction** over time was always the same.
-However, like many things in life, it can *improve* a lot by using a **curve** to model it.
+However, like many things in life, it can *improve* a lot by using a **curve** to model it.  
 For example the **trauma** could be reduced *more* or *less* depending on it's own value.
 
 ⠀
