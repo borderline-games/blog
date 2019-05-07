@@ -73,7 +73,7 @@ A more user-friendly approach would be to use **curves** as they give designers 
 ```c#
 void LateUpdate()
 {
-⬛️  float shake = traumaCurve.Evaluate(trauma);
+🦑  float shake = traumaCurve.Evaluate(trauma);
 
     transform.localPosition  = new Vector3(
         maxTranslation.x * **shake** * Random.Range(-1f, 1f),
@@ -112,11 +112,11 @@ void LateUpdate()
         0
     );
 
-⬛️  transform.localEulerAngles = new Vector3(
-⬛️         maxAngle.x * shake * Random.Range(-1f, 1f),
-⬛️         maxAngle.y * shake * Random.Range(-1f, 1f),
-⬛️         maxAngle.z * shake * Random.Range(-1f, 1f)
-⬛️  );
+🦑  transform.localEulerAngles = new Vector3(
+🦑         maxAngle.x * shake * Random.Range(-1f, 1f),
+🦑         maxAngle.y * shake * Random.Range(-1f, 1f),
+🦑         maxAngle.z * shake * Random.Range(-1f, 1f)
+🦑  );
 
     trauma = Mathf.Max(0, trauma - traumaReduction * Time.deltaTime);
 }
@@ -144,14 +144,14 @@ void LateUpdate()
     float shake = traumaCurve.Evaluate(trauma);
     
     transform.localEulerAngles = new Vector3(
-⬛️      maxAngle.x * shake * (Mathf.PerlinNoise(42314.1534f, Time.time) * 2 - 1),
-⬛️      maxAngle.y * shake * (Mathf.PerlinNoise(56291.2783f, Time.time) * 2 - 1),
-⬛️      maxAngle.z * shake * (Mathf.PerlinNoise(16912.2456f, Time.time) * 2 - 1)
+🦑      maxAngle.x * shake * (Mathf.PerlinNoise(42314.1534f, Time.time) * 2 - 1),
+🦑      maxAngle.y * shake * (Mathf.PerlinNoise(56291.2783f, Time.time) * 2 - 1),
+🦑      maxAngle.z * shake * (Mathf.PerlinNoise(16912.2456f, Time.time) * 2 - 1)
     );
 
     transform.localPosition  = new Vector3(
-⬛️      maxTranslation.x * shake * (Mathf.PerlinNoise(78312.75412f, Time.time) * 2 - 1),
-⬛️      maxTranslation.y * shake * (Mathf.PerlinNoise(13781.45754f, Time.time) * 2 - 1),
+🦑      maxTranslation.x * shake * (Mathf.PerlinNoise(78312.75412f, Time.time) * 2 - 1),
+🦑      maxTranslation.y * shake * (Mathf.PerlinNoise(13781.45754f, Time.time) * 2 - 1),
         0
     );
 
@@ -185,8 +185,8 @@ void LateUpdate()
         0
     );
 
-⬛️  float reduction = traumaReduction * traumaReductionCurve.Evaluate(trauma);
-⬛️  trauma = Mathf.Max(0, trauma - reduction * Time.deltaTime);
+🦑  float reduction = traumaReduction * traumaReductionCurve.Evaluate(trauma);
+🦑  trauma = Mathf.Max(0, trauma - reduction * Time.deltaTime);
 }
 ```
 
@@ -201,14 +201,14 @@ void LateUpdate()
     float shake = traumaCurve.Evaluate(trauma);
     
     transform.localEulerAngles = new Vector3(
-⬛️      maxAngle.x * shake * (Mathf.PerlinNoise(42314.1534f, Time.time * timeMultiplier) * 2 - 1),
-⬛️      maxAngle.y * shake * (Mathf.PerlinNoise(56291.2783f, Time.time * timeMultiplier) * 2 - 1),
-⬛️      maxAngle.z * shake * (Mathf.PerlinNoise(16912.2456f, Time.time * timeMultiplier) * 2 - 1)
+🦑      maxAngle.x * shake * (Mathf.PerlinNoise(42314.1534f, Time.time * timeMultiplier) * 2 - 1),
+🦑      maxAngle.y * shake * (Mathf.PerlinNoise(56291.2783f, Time.time * timeMultiplier) * 2 - 1),
+🦑      maxAngle.z * shake * (Mathf.PerlinNoise(16912.2456f, Time.time * timeMultiplier) * 2 - 1)
     );
 
     transform.localPosition  = new Vector3(
-⬛️      maxTranslation.x * shake * (Mathf.PerlinNoise(78312.75412f, Time.time * timeMultiplier) * 2 - 1),
-⬛️      maxTranslation.y * shake * (Mathf.PerlinNoise(13781.45754f, Time.time * timeMultiplier) * 2 - 1),
+🦑      maxTranslation.x * shake * (Mathf.PerlinNoise(78312.75412f, Time.time * timeMultiplier) * 2 - 1),
+🦑      maxTranslation.y * shake * (Mathf.PerlinNoise(13781.45754f, Time.time * timeMultiplier) * 2 - 1),
         0
     );
 
