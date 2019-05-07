@@ -43,10 +43,16 @@ Every time the player *gets hit*, this variable go up from a certain number depe
 The value of the variable **carry on** from frame to frame but *decreases* with time.
 This variable can then be used in order to move the camera just like the usual way.
 
+</br>
+
 ![](../../images/trauma-screenshake/screenshakes0.gif)
+
+</br>
 
 In addition to a nice *time based reduction* this give us a really more interesting thing : **additivity**.
 In other words, a lot of *small hits* could create *big screenshakes* if received in a small time window.
+
+</br>
 
 ```c#
 void LateUpdate()
@@ -61,6 +67,8 @@ void LateUpdate()
 }
 ```
 
+</br>
+
 #### Of linearity
 Linearity doesn't feel natural for a lot of things, sounds does not *scale linearly*, being good at making games does not scale linearly, the way things *hurt* does not either.
 As you can probably guess, same goes for screenshakes!
@@ -69,6 +77,8 @@ A more user-friendly approach would be to use **curves** as they give designers 
 
 ![](../../images/trauma-screenshake/curve.png)
 > A beautiful curve that is **definitely** not doable with a power function
+
+</br>
 
 ```c#
 void LateUpdate()
@@ -85,6 +95,8 @@ void LateUpdate()
 }
 ```
 
+</br>
+
 #### Axis of liberty
 For a long time, games have been *two-dimensional* since then games have evolved, many screenshakes did not.
 Cameras are now able to **rotate** and we will take advantage of that (even in 2d games)!
@@ -95,11 +107,19 @@ This is where we start making a difference between screenshakes in *2d* and *3d*
 
 For 2d games, things are pretty straightfoward: just add a *rotation* to the camera using the *trauma value*, it will feel a w e s o m e.
 
+</br>
+
 ![](../../images/trauma-screenshake/screenshakes1.gif)
 
-However; 3d games actually **do not** do well with *translation* as it can lead to the camera *traversing walls* and using the **3 axis** of *rotation* is best the way to go here.
+</br>
+
+However, 3d games actually **do not** do well with *translation* as it can lead to the camera *traversing walls* and using the **3 axis** of *rotation* is best the way to go here.
+
+</br>
 
 ![](../../images/trauma-screenshake/screenshakes2.gif)
+
+</br>
 
 ```c#
 void LateUpdate()
@@ -122,6 +142,8 @@ void LateUpdate()
 }
 ```
 
+</br>
+
 #### Space-Time continuity
 For now, we only used a **random** function in order to get our *translation* or *rotation* value. This works but has two major flaws:
 * No *continuity* of the transformation
@@ -133,10 +155,13 @@ Those two flaws can easily be fixed by using *perlin noise* instead as two close
 
 We will want to use a *random number* that will be hardcoded and different for each of the *transformations fields* and use the **time** as the second value.
 
+</br>
+
 ![](../../images/trauma-screenshake/screenshakes3.gif)
 ![](../../images/trauma-screenshake/screenshakes4.gif)
 >Are those *actually* slowed down gifs?
 
+</br>
 
 ```c#
 void LateUpdate()
@@ -159,6 +184,8 @@ void LateUpdate()
 }
 ```
 
+</br>
+
 ### Going further
 
 Until now the **trauma reduction** over time was always the same.
@@ -167,6 +194,8 @@ For example the **trauma** could be reduced *more* or *less* depending on it's o
 
 ![](../../images/trauma-screenshake/trauma_curve.png)
 >A very well designed trauma reduction curve
+
+</br>
 
 ```c#
 void LateUpdate()
@@ -190,10 +219,16 @@ void LateUpdate()
 }
 ```
 
+</br>
+
 Sometimes you will want to tweak the **speed** of the shakes, this is exactly the same as *multiplying* perlin noise's **frequency**!
+
+</br>
 
 ![](../../images/trauma-screenshake/perlin.png)
 >Perlin noise at different frequencies
+
+</br>
 
 ```c#
 void LateUpdate()
@@ -216,6 +251,8 @@ void LateUpdate()
     trauma = Mathf.Max(0, trauma - reduction * Time.deltaTime);
 }
 ```
+
+</br>
 
 **That's it for now**!
 
