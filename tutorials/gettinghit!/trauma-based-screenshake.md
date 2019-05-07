@@ -75,6 +75,8 @@ As you can probably guess, same goes for screenshakes!
 In his GDC talk, *Squirrel Eiserloh* uses a **power** function for this purpose, it works great but is quite difficult to use when you want to do fine-tuning.
 A more user-friendly approach would be to use **curves** as they give designers *quick* and *powerful* controls on how two values relate to each other.
 
+⠀
+
 ![](../../images/trauma-screenshake/curve.png)
 > A beautiful curve that is **definitely** not doable with a power function
 
@@ -191,6 +193,8 @@ void LateUpdate()
 Until now the **trauma reduction** over time was always the same.
 However, like many things in life, it can *improve* a lot by using a **curve** to model it.
 For example the **trauma** could be reduced *more* or *less* depending on it's own value.
+
+⠀
 
 ![](../../images/trauma-screenshake/trauma_curve.png)
 >A very well designed trauma reduction curve
