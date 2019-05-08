@@ -36,7 +36,7 @@ Some do add a certain *continuity* and *smoothness* in the movement by **interpo
 
 ## Screenshake, the better way
 
-### Traumatising
+### 1. Traumatising
 
 This idea behind **trauma based** screenshake is fairly simple: 
 A *variable* is used to describe the *current* trauma of the player, this variable is normalized from 0 to 1.  
@@ -70,7 +70,7 @@ void LateUpdate()
 
 ⠀
 
-### Of linearity
+### 2. Of linearity
 
 Linearity doesn't feel natural for a lot of things, sounds does not *scale linearly*, being good at making games does not scale linearly, the way things *hurt* does not either.  
 As you can probably guess, same goes for screenshakes!  
@@ -101,7 +101,7 @@ void LateUpdate()
 
 ⠀
 
-### Axis of liberty
+### 3. Axis of liberty
 
 For a long time, games have been *two-dimensional* since then games have evolved, many screenshakes did not.  
 Cameras are now able to **rotate** and we will take advantage of that (even in 2d games)!  
@@ -149,7 +149,7 @@ void LateUpdate()
 
 ⠀
 
-### Space-Time continuity
+### 4. Space-Time continuity
 
 For now, we only used a **random** function in order to get our *translation* or *rotation* value.  
 This works but has two major flaws:
@@ -193,7 +193,7 @@ void LateUpdate()
 
 ⠀
 
-## Going further
+### 5. Going further
 
 Until now the **trauma reduction** over time was always the same.  
 However, like many things in life, it can *improve* a lot by using a **curve** to model it.  

@@ -15,7 +15,7 @@ author: Constantin Liétard../../images/trauma-screenshake/
 Welcome to this tutorial series about **getting your ass kicked**.  
 We will explore the many ways of improving the *feel* of *being hurt* using **screenshakes** and **camera effects**.
 
-#### 1 - [All purpose screenshake, the right way](./trauma-based-screenshake.html)
+#### 1. [All purpose screenshake, the right way](./trauma-based-screenshake.html)
 
 * * *
 
