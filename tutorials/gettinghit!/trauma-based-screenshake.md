@@ -14,7 +14,7 @@ author: Constantin Liétard
 
 ## Intro
 
-Over the years, you most likely encountered many forms of **screenshakes**, whether they were a way to *increase the impact* of the player's actions or those of *the enemies*
+Over the years, you most likely encountered many forms of **screenshakes**, whether they were a way to *increase the impact* of the player's actions or those of *the enemies*.  
 This tutorial will focus on the later since this series is all about **getting your ass kicked**.
 
 This tutorial was heavily based on [this GDC talk](https://www.youtube.com/watch?v=tu-Qe66AvtY) with improvements here and there.
@@ -39,10 +39,10 @@ Some do add a certain *continuity* and *smoothness* in the movement by **interpo
 ### Traumatising
 
 This idea behind **trauma based** screenshake is fairly simple: 
-A *variable* is used to describe the *current* trauma of the player, this variable is normalized from 0 to 1.
-Every time the player *gets hit*, this variable go up from a certain number depending on the *power* of the attack.
-The value of the variable **carry on** from frame to frame but *decreases* with time.
-This variable can then be used in order to move the camera just like the usual way.
+A *variable* is used to describe the *current* trauma of the player, this variable is normalized from 0 to 1.  
+Every time the player *gets hit*, this variable go up from a certain number depending on the *power* of the attack.  
+The value of the variable **carry on** from frame to frame but *decreases* with time.  
+This variable can then be used in order to move the camera just like the usual way.  
 
 ⠀
 
@@ -50,7 +50,7 @@ This variable can then be used in order to move the camera just like the usual w
 
 ⠀
 
-In addition to a nice *time based reduction* this give us a really more interesting thing : **additivity**.
+In addition to a nice *time based reduction* this give us a really more interesting thing : **additivity**.  
 In other words, a lot of *small hits* could create *big screenshakes* if received in a small time window.
 
 ⠀
@@ -72,10 +72,10 @@ void LateUpdate()
 
 ### Of linearity
 
-Linearity doesn't feel natural for a lot of things, sounds does not *scale linearly*, being good at making games does not scale linearly, the way things *hurt* does not either.
-As you can probably guess, same goes for screenshakes!
-In his GDC talk, *Squirrel Eiserloh* uses a **power** function for this purpose, it works great but is quite difficult to use when you want to do fine-tuning.
-A more user-friendly approach would be to use **curves** as they give designers *quick* and *powerful* controls on how two values relate to each other.
+Linearity doesn't feel natural for a lot of things, sounds does not *scale linearly*, being good at making games does not scale linearly, the way things *hurt* does not either.  
+As you can probably guess, same goes for screenshakes!  
+In his GDC talk, *Squirrel Eiserloh* uses a **power** function for this purpose, it works great but is quite difficult to use when you want to do fine-tuning.  
+A more user-friendly approach would be to use **curves** as they give designers *quick* and *powerful* controls on how two values relate to each other.  
 
 ⠀
 
@@ -103,14 +103,14 @@ void LateUpdate()
 
 ### Axis of liberty
 
-For a long time, games have been *two-dimensional* since then games have evolved, many screenshakes did not.
-Cameras are now able to **rotate** and we will take advantage of that (even in 2d games)!
+For a long time, games have been *two-dimensional* since then games have evolved, many screenshakes did not.  
+Cameras are now able to **rotate** and we will take advantage of that (even in 2d games)!  
 
-This is where we start making a difference between screenshakes in *2d* and *3d* games, in this context 2d or 3d are not used to describe the way the game is rendered but the way the *camera relate to the player*: **first** and **third** person camera are 3d when **side** and **bird's eye view** are 2d.
+This is where we start making a difference between screenshakes in *2d* and *3d* games, in this context 2d or 3d are not used to describe the way the game is rendered but the way the *camera relate to the player*: **first** and **third** person camera are 3d when **side** and **bird's eye view** are 2d.  
 
-*Note : This is also a matter of perspective as the bigger perspective the fewer objects will be moving when using translational shake.*
+*Note : This is also a matter of perspective as the bigger perspective the fewer objects will be moving when using translational shake.*  
 
-For 2d games, things are pretty straightfoward: just add a *rotation* to the camera using the *trauma value*, it will feel a w e s o m e.
+For 2d games, things are pretty straightfoward: just add a *rotation* to the camera using the *trauma value*, it will feel a w e s o m e.  
 
 ⠀
 
@@ -118,7 +118,7 @@ For 2d games, things are pretty straightfoward: just add a *rotation* to the cam
 
 ⠀
 
-However, 3d games actually **do not** do well with *translation* as it can lead to the camera *traversing walls* and using the **3 axis** of *rotation* is best the way to go here.
+However, 3d games actually **do not** do well with *translation* as it can lead to the camera *traversing walls* and using the **3 axis** of *rotation* is best the way to go here.  
 
 ⠀
 
@@ -151,7 +151,8 @@ void LateUpdate()
 
 ### Space-Time continuity
 
-For now, we only used a **random** function in order to get our *translation* or *rotation* value. This works but has two major flaws:
+For now, we only used a **random** function in order to get our *translation* or *rotation* value.  
+This works but has two major flaws:
 * No *continuity* of the transformation
 * Lack of time *scaling*
 
@@ -194,7 +195,7 @@ void LateUpdate()
 
 ## Going further
 
-Until now the **trauma reduction** over time was always the same.
+Until now the **trauma reduction** over time was always the same.  
 However, like many things in life, it can *improve* a lot by using a **curve** to model it.  
 For example the **trauma** could be reduced *more* or *less* depending on it's own value.
 
