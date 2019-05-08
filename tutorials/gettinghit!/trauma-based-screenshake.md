@@ -17,7 +17,7 @@ author: Constantin Liétard
 Welcome to this tutorial series in which we will explore the many ways of improving the *feel* of *being hurt* using **screenshakes** and **camera effects**.
 
 Over the years, you most likely encountered many forms of **screenshakes**, whether they were a way to *increase the impact* of the player's actions or those of *the enemies*.  
-This tutorial will focus on the later since this series is all about **getting your ass kicked**.
+This tutorial will focus on the latter since this series is all about **getting your ass kicked**.
 
 This tutorial was heavily based on [this GDC talk](https://www.youtube.com/watch?v=tu-Qe66AvtY) with improvements here and there.
 The implementation is done in **Unity** but can easily be ported to any other engine.
@@ -199,7 +199,7 @@ void LateUpdate()
 
 Until now the **trauma reduction** over time was always the same.  
 However, like many things in life, it can *improve* a lot by using a **curve** to model it.  
-For example the **trauma** could be reduced *more* or *less* depending on it's own value.
+For example the **trauma** could be reduced more or less depending on it's own value.
 
 ⠀
 
