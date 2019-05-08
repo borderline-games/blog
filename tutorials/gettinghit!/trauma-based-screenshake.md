@@ -14,6 +14,8 @@ author: Constantin Liétard
 
 ## Intro
 
+Welcome to this tutorial series in which we will explore the many ways of improving the *feel* of *being hurt* using **screenshakes** and **camera effects**.
+
 Over the years, you most likely encountered many forms of **screenshakes**, whether they were a way to *increase the impact* of the player's actions or those of *the enemies*.  
 This tutorial will focus on the later since this series is all about **getting your ass kicked**.
 
@@ -272,4 +274,4 @@ You can also **download** the final Unity package [here](../../sources/GettingHi
 
 * * *
 
-[back](./)
+[back](../../../)
