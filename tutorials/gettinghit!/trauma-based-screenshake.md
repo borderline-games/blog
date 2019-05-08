@@ -266,7 +266,7 @@ void LateUpdate()
 **That's it for now**!
 
 If you have any *improvement idea* or *question* related to this tutorial feel free to hit me at [@screenshakes](https://twitter.com/screenshakes)  
-For further *updates* and *tutorials*, you can follow us on Twitter [@borderline_vg](https://twitter/borderline_vg)
+For further *updates* and *tutorials*, you can follow us on Twitter [@borderline_vg](https://twitter.com/borderline_vg)
 
 You can also **download** the final Unity package [here](../../sources/GettingHit!-TraumaScreenshake.unitypackage).
 
